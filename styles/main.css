@@ -92,3 +92,6 @@ html {
 .links-container .navbar-link:active {
     background-color:white;
 }
+.container.narrow {
+    max-width: 56rem;
+}
