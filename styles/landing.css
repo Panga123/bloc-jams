@@ -39,12 +39,12 @@ body.landing {
          -webkit-transform: scaleX(0.9) translateY(3rem);
          -moz-transform: scaleX(0.9) translateY(3rem);
          transform: scaleX(0.9) translateY(3rem);
-         -webkit-transition: all 0.25s ease-in-out;
-         -moz-transition: all 0.25s ease-in-out;
-         transition: all 0.25s ease-in-out;
-         -webkit-transition-delay: 0.2s;
-         -moz-transition-delay: 0.2s;
-         transition-delay: 0.2s;
+         -webkit-transition: all 0.25s ease-in;
+         -moz-transition: all 0.50s ease-in;
+         transition: all 0.50s ease-in;
+         -webkit-transition-delay: 0.30s;
+         -moz-transition-delay: 0.30s;
+         transition-delay: 0.10s;
 }
 
 .point .point-title {
