@@ -23,4 +23,4 @@ var collectionItemTemplate =
      for (var i = 0; i < 12; i++) {
          collectionContainer.innerHTML += collectionItemTemplate;
      }
- }
+ } 
