@@ -26,6 +26,22 @@ var albumPicasso = {
          { title: 'Wrong phone number', duration: '2:15'}
      ]
  };
+
+ var albumNeruda = {
+      title: 'Los Colores',
+      artist: 'Pablo Neruda',
+      label: 'ChileRecords',
+      year: '1975',
+      albumArtUrl: 'assets/images/album_covers/01.png',
+      songs: [
+          { title: 'Blue', duration: '4:26' },
+          { title: 'Green', duration: '3:14' },
+          { title: 'Red', duration: '5:01' },
+          { title: 'Pink', duration: '1:12'},
+          { title: 'Magenta', duration: '3:15'}
+      ]
+  };
+
  var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -37,24 +53,25 @@ var albumPicasso = {
 
      return template;
  };
- var setCurrentAlbum = function(album) {
-     // #1
-     var albumTitle = document.getElementsByClassName('album-view-title')[0];
-     var albumArtist = document.getElementsByClassName('album-view-artist')[0];
-     var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
-     var albumImage = document.getElementsByClassName('album-cover-art')[0];
-     var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+//selecting elements by class to make changes to
+ var albumTitle = document.getElementsByClassName('album-view-title')[0];
+ var albumArtist = document.getElementsByClassName('album-view-artist')[0];
+ var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
+ var albumImage = document.getElementsByClassName('album-cover-art')[0];
+ var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
 
-     // #2
-     albumTitle.firstChild.nodeValue = album.title;
+ var setCurrentAlbum = function(album) {
+
+     // #2 assigning values to each part of the album
+     albumTitle.firstChild.nodeValue = album.name;
      albumArtist.firstChild.nodeValue = album.artist;
      albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;
      albumImage.setAttribute('src', album.albumArtUrl);
 
-     // #3
-     albumSongList.innerHTML = '';
+     // #3 Clears contents of album song list container
+     albumSongList.innerHTML = ' ';
 
-     // #4
+     // #4 Build list of songs from album Javascript object
      for (var i = 0; i < album.songs.length; i++) {
          albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
      }
@@ -62,4 +79,14 @@ var albumPicasso = {
 
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
+
+     var albums = [albumPicasso, albumMarconi, albumNeruda];
+     var index = 1;
+    albumImage.addEventListener("click", function(event) {
+      setCurrentAlbum(albums[index]);
+      index++;
+      if (index == albums.length) {
+        index = 0;
+      }
+    });
  };
