@@ -1,4 +1,4 @@
-player-bar {
+.player-bar {
      position: fixed;
      bottom: 0;
      left: 0;
@@ -176,7 +176,7 @@ player-bar {
      .player-bar .currently-playing {
          min-height: 2.5rem;
      }
-      
+
      .player-bar .artist-name,
      .player-bar .song-name {
          display: none;

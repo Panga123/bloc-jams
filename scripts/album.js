@@ -103,14 +103,10 @@ var albumPicasso = {
  var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
  var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause"></span></a>';
 
- // Store state of playing songs
+ // Store state of playing songs...
  var currentlyPlayingSong = null;
 
 $(document).ready(function() {
      setCurrentAlbum(albumPicasso);
-     for (var i = 0; i < songRows.length; i++) {
-       songRows[i].addEventListener('click', function(event) {
-             clickHandler(event.target);
-         });
-     }
+
 });
