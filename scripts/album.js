@@ -41,7 +41,7 @@
             if (songNumber !== currentlyPlayingSongNumber) {
               songNumberCell.html(playButtonTemplate);
             }
-          }
+            }
           };
           var offHover = function(event) {
             var songNumberCell = $(this).find('.song-item-number');
