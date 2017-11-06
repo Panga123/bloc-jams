@@ -31,7 +31,7 @@
             $('.main-controls .play-pause').html(playerBarPlayButton);
             currentlyPlayingSongNumber = null;
             currentSongFromAlbum = null;
-	}
+	        }
 };
           var onHover = function(event) {
             var songNumberCell = $(this).find('.song-item-number');
