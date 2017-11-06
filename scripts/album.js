@@ -37,7 +37,7 @@
             var songNumberCell = $(this).find('.song-item-number');
             var songNumber = songNumberCell.attr('data-song-number');
 
-            if (songNumber !== currentlyPlayingSong) {
+            if (songNumber !== currentlyPlayingSong) 
             if (songNumber !== currentlyPlayingSongNumber) {
               songNumberCell.html(playButtonTemplate);
 }
