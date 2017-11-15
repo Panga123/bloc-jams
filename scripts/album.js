@@ -2,7 +2,6 @@ var setSong = function(songNumber){
   currentlyPlayingSongNumber = parseInt(songNumber);
   currentSongFromAlbum = currentAlbum.songs[songNumber - 1];
 };
-
 var getSongnumberCell = function(number) {
   return $('.song-item-number[data-song-number="' + number + '"]');
 };
