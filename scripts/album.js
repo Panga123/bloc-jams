@@ -83,7 +83,7 @@ var setVolume = function(volume) {
      $row.hover(onHover, offHover);
      // #3
      return $row;
-     //deleted }; (?)
+   };
 
  var setCurrentAlbum = function(album) {
     currentAlbum = album;
@@ -110,7 +110,7 @@ var setVolume = function(volume) {
      }
  };
 
-      var trackIndex = function(album, song) { // still don't get what this does 
+      var trackIndex = function(album, song) { // still don't get what this does
         return album.songs.indexOf(song);  // what's indexof? Look up
       };
 
