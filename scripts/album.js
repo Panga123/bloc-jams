@@ -1,4 +1,13 @@
 
+var setCurrentTimeInPlayerBar = function (currentTime) {
+    $('.current-time').text(filterTimeCode(currentTime));
+}; // set text of element with current time class to current time in the song
+
+var setTotalTimeInPlayerBar = function (totalTime) {
+    $('.total-time').text(filterTimeCode(totalTime));
+}; // set text of element with total time class to total time of the song 
+
+
 var setSong = function(songNumber) {
   if (currentSoundFile) { //stops concurrent playback
          currentSoundFile.stop();
@@ -141,6 +150,8 @@ var getSongNumberCell= function(number) {
              var $seekBar = $('.seek-control .seek-bar');
 
              updateSeekPercentage($seekBar, seekBarFillRatio);
+             setCurrentTimeInPlayerBar(this.getTime()); //current time updates with song playback
+             setTotalTimeInPlayerBar(this.getDuration()); // total time updates with song playback
          });
      }
  };
