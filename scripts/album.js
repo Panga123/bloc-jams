@@ -5,8 +5,20 @@ var setCurrentTimeInPlayerBar = function (currentTime) {
 
 var setTotalTimeInPlayerBar = function (totalTime) {
     $('.total-time').text(filterTimeCode(totalTime));
-}; // set text of element with total time class to total time of the song 
+}; // set text of element with total time class to total time of the song
 
+var filterTimeCode = function (timeInSeconds) { // formats time info
+    var time = parseFloat(timeInSeconds); //turn seconds into number form
+
+    var minutes = Math.floor(time / 60); //creating and storing variables (minutes and seconds)
+    var seconds = Math.floor(time - minutes * 60);
+
+  if (seconds < 10) (seconds = "0"+seconds); {
+    var time = minutes + ':' + seconds;
+    return time; //return time in format
+  }
+
+};
 
 var setSong = function(songNumber) {
   if (currentSoundFile) { //stops concurrent playback
@@ -41,7 +53,7 @@ var getSongNumberCell= function(number) {
     return songCell;
 };
 
- var createSongRow = function(songNumber, songName, songLength) {
+ var createSongRow = function(songNumber, songName, songLength) {//not sure if this is right.
      var template =
         '<tr class="album-view-song-item">'
       + '  <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>'
