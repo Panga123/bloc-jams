@@ -8,15 +8,18 @@ var setTotalTimeInPlayerBar = function (totalTime) {
 }; // set text of element with total time class to total time of the song
 
 var filterTimeCode = function (timeInSeconds) { // formats time info
-    var time = parseFloat(timeInSeconds); //turn seconds into number form
+  var time = parseFloat(timeInSeconds); //turn seconds into number form
 
-    var minutes = Math.floor(time / 60); //creating and storing variables (minutes and seconds)
-    var seconds = Math.floor(time - minutes * 60);
+  var minutes = Math.floor(time / 60); //creating and storing variables (minutes and seconds)
+  var seconds = Math.floor(time - (minutes * 60));
 
-  if (seconds < 10) (seconds = "0"+seconds); {
-    var time = minutes + ':' + seconds;
-    return time; //return time in format
+  if (seconds < 10){
+    seconds = "0" + seconds;
   }
+
+  var time = minutes + ':' + seconds;
+  console.log(time);
+  return time; //return time in format
 
 };
 
