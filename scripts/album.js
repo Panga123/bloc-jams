@@ -8,15 +8,18 @@ var setTotalTimeInPlayerBar = function (totalTime) {
 }; // set text of element with total time class to total time of the song
 
 var filterTimeCode = function (timeInSeconds) { // formats time info
-    var time = parseFloat(timeInSeconds); //turn seconds into number form
+  var time = parseFloat(timeInSeconds); //turn seconds into number form
 
-    var minutes = Math.floor(time / 60); //creating and storing variables (minutes and seconds)
-    var seconds = Math.floor(time - minutes * 60);
+  var minutes = Math.floor(time / 60); //creating and storing variables (minutes and seconds)
+  var seconds = Math.floor(time - (minutes * 60));
 
-  if (seconds < 10) (seconds = "0"+seconds); {
-    var time = minutes + ':' + seconds;
-    return time; //return time in format
+  if (seconds < 10){
+    seconds = "0" + seconds;
   }
+
+  var time = minutes + ':' + seconds;
+  console.log(time);
+  return time; //return time in format
 
 };
 
@@ -158,7 +161,7 @@ var getSongNumberCell= function(number) {
          // #10
          currentSoundFile.bind('timeupdate', function(event) {
              // #11
-             var seekBarFillRatio = this.getTime() / this.getDuration();
+             var seekBarFillRatio = this.getTime() / this.getDuration(); // .1
              var $seekBar = $('.seek-control .seek-bar');
 
              updateSeekPercentage($seekBar, seekBarFillRatio);
@@ -169,7 +172,7 @@ var getSongNumberCell= function(number) {
  };
 
  var updateSeekPercentage = function($seekBar, seekBarFillRatio) {
-    var offsetXPercent = seekBarFillRatio * 100;
+    var offsetXPercent = seekBarFillRatio * 100; // 10
     // #1
     offsetXPercent = Math.max(0, offsetXPercent);
     offsetXPercent = Math.min(100, offsetXPercent);
